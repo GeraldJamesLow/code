@@ -10,7 +10,7 @@ I came across this image of one of the menus of all time. I just had to know wha
 </div>
 <br>
 
-Absolutely glorious. Each quantity and price was compiled into an [excel sheet](data/Chicken_Wings.xlsx) for some initial analysis.
+Absolutely glorious. Each quantity and price was compiled into an [excel sheet](data/Chicken_Wings.xlsx) for some initial analysis. A simple scatter graph was also plotted detailing the how the average wing cost varies with the quantity of wings purchased.
 
 ## Initial Findings
 <div style="text-align: center">
@@ -18,9 +18,9 @@ Absolutely glorious. Each quantity and price was compiled into an [excel sheet](
 </div>
 <br>
 
-From the graph, it is clear that there is some method to this madness. The average price of a wing seems to drop drastically for 25, 50, and 125 wings.<br>
+After using matplotlib to plot the graph, it is clear that there is some method to this madness. The average price of a wing seems to drop drastically for 25, 50, and 125 wings.<br>
 
 Ultimately,
-- The <span style="color: green;"> best </span> deal on wings is for 111.2 cents per wing (25, 50, or 125 wings)
-- Conversely, the <span style="color: red;"> worst </span> deal on wings is for 114.0 cents per wing (5 wings)
+- The <span style="color: green;"> best </span> deal on wings is for 111.2 cents per wing (25, 50, or 125 wings).
+- Conversely, the <span style="color: red;"> worst </span> deal on wings is for 114.0 cents per wing (5 wings).
 

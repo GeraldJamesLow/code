@@ -1,0 +1,14 @@
+name: datasci
+channels:
+  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - python=3.10
+  - jupyterlab
+  - matplotlib
+  - numpy
+  - pandas
+  - scikit-learn
+  - tensorflow
+prefix: /opt/anaconda3/envs/datasci
