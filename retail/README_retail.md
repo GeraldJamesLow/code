@@ -45,13 +45,14 @@ The dataset contains 541,909 rows of transactional information.
       <td>Number of products purchased.</td>
       <td>Integer</td>
       <td>5</td>
+      <td>Negative for cancellations</td>
     </tr>
     <tr>
       <td><strong>InvoiceDate</strong></td>
       <td>Date and time of transaction generation (D/MM/YY)</td>
       <td>Date (DD/MM/YY HH:MM)</td>
       <td>1/12/10 8:26</td>
-      <td> Converted to datetime format (YYYY-MM-DD)</td>
+      <td>Converted to datetime format (YYYY-MM-DD)</td>
     </tr>
     <tr>
       <td><strong>UnitPrice</strong></td>
@@ -107,12 +108,87 @@ The dataset contains 541,909 rows of transactional information.
 - cancellations (9288 rows)
 
 ### 3. Clean valid_sales
-- Items with quantities of 0 or less removed / 474 removed
-- Items with StockCode describing postage e.g. POST, M etc. removed / 2,312 removed
-- Items with invalid price (£0 or less) removed / 578 removed
+<table>
+  <thead>
+    <tr>
+      <th>Sanity Check</th>
+      <th>Rows Removed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Invalid Quantity</strong></td>
+      <td>474</td>
+    </tr>
+    <tr>
+      <td><strong>Invalid StockCode<br> e.g. POST, M etc.</strong></td>
+      <td>2,312</td>
+    </tr>
+    <tr>
+      <td><strong> Invalid Price</strong></td>
+      <td>578</td>
+    </tr>
+</table>
 
 527,803 rows left in valid_sales
+
+### 4. Clean cancellations
+<table>
+  <thead>
+    <tr>
+      <th>Sanity Check</th>
+      <th>Rows Removed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Negative Quantities</strong></td>
+      <td>0 <br> (Converted all to positive) </td>
+    </tr>
+    <tr>
+      <td><strong>Invalid StockCode<br> e.g. POST, M etc.</strong></td>
+      <td>527</td>
+    </tr>
+    <tr>
+      <td><strong> Invalid Price</strong></td>
+      <td>0</td>
+    </tr>
+</table>
+
+8,761 rows left in cancellations
 
 
 ## Analysis of Valid Sales
 ### Total Revenue by Month
+
+<div style="text-align: center">
+<img src="assets/total_revenue_by_month.png" alt="Total Revenue by Month"/>
+</div>
+
+
+Highest revenue was in November 2011 (£1,457,775.53)
+
+Lowest revenue was in February 2011 (£508,952.87)
+
+Average revenue was £791,234.22 per month
+
+### Total Revenue by Country (Top 10)
+
+There are 446 items not associated with any country
+
+<div style="text-align: center">
+<img src="assets/top_ten_revenue_fig.png" alt="Top 10 Revenue by Country"/>
+</div>
+
+The United Kingdom generated the most revenue (£8,762,173.56) based on this graph. However, this is expected because the company is based in the UK, and they sold the most items in the UK (4,654,402). 
+
+### Top Average Order Values (Top 10)
+Another metric of sales is the average order value (AOV), or average revenue per transaction. This helps identify which country had higher value transactions
+
+For example, sales in the Netherlands generated £283,889.34 from selling 200,258 items. This indicates the AOV in the Netherlands is much higher than in the UK (£3052.57 vs £489.12)
+
+<div style="text-align: center">
+<img src="assets/top_ten_aov_fig.png" alt="Top 10 AOV by Country"/>
+</div>
+
+It is clear that the Netherlands either makes more bulk purchases, or purchases more higher-value items per wholesale
