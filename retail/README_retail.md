@@ -59,7 +59,7 @@ The dataset contains 541,909 rows of transactional information.
       <td>Price (in Sterling) per unit of the product.</td>
       <td>Continous</td>
       <td>55</td>
-      <td></td>
+      <td>Converted to pence to minimise floating point errors</td>
     </tr>
     <tr>
       <td><strong>CustomerID</strong></td>
