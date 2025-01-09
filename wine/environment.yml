@@ -11,4 +11,6 @@ dependencies:
   - pandas
   - scikit-learn
   - tensorflow
+  - plotly
+  - seaborn
 prefix: /opt/anaconda3/envs/datasci
