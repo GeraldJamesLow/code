@@ -6,6 +6,7 @@ This is a transactional dataset which contains all the transactions occurring be
 The dataset was retrieved from [UCI's Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online+retail).
 
 ## Dataset Features
+The dataset contains 541,909 rows of transactional information.
 
 <table>
   <thead>
@@ -48,31 +49,70 @@ The dataset was retrieved from [UCI's Machine Learning Repository](https://archi
     <tr>
       <td><strong>InvoiceDate</strong></td>
       <td>Date and time of transaction generation (D/MM/YY)</td>
-      <td></td>
-      <td></td>
+      <td>Date (DD/MM/YY HH:MM)</td>
+      <td>1/12/10 8:26</td>
       <td> Converted to datetime format (YYYY-MM-DD)</td>
     </tr>
     <tr>
       <td><strong>UnitPrice</strong></td>
       <td>Price (in Sterling) per unit of the product.</td>
-      <td></td>
-      <td></td>
+      <td>Continous</td>
+      <td>55</td>
       <td></td>
     </tr>
     <tr>
       <td><strong>CustomerID</strong></td>
-      <td>Unique identifier for the customer.</td>
-      <td></td>
-      <td></td>
+      <td>Unique 5-digit identifier for the customer.</td>
+      <td>Categorical</td>
+      <td>12345</td>
       <td></td>
     </tr>
     <tr>
       <td><strong>Country</strong></td>
       <td>Country where the customer resides.</td>
-      <td></td>
-      <td></td>
+      <td>Categorical</td>
+      <td>United Kingdom</td>
       <td></td>
     </tr>
   </tbody>
 </table>
 
+## Data Cleaning & Preparation
+### 1. Check for NA values
+<table>
+  <thead>
+    <tr>
+      <th>Column Name</th>
+      <th>Null Count</th>
+      <th>Removed?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Description</strong></td>
+      <td>1,454</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><strong>CustomerID</strong></td>
+      <td>135,080</td>
+      <td>No</td>
+    </tr>
+</table>
+
+540,455 rows left after dropping 1,454 NA values (based on 'description' column)
+
+### 2. Split Dataset into valid_sales & cancellations
+- valid_sales (531167 rows)
+- cancellations (9288 rows)
+
+### 3. Clean valid_sales
+- Items with quantities of 0 or less removed / 474 removed
+- Items with StockCode describing postage e.g. POST, M etc. removed / 2,312 removed
+- Items with invalid price (£0 or less) removed / 578 removed
+
+527,803 rows left in valid_sales
+
+
+## Analysis of Valid Sales
+### Total Revenue by Month
