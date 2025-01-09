@@ -157,6 +157,15 @@ The dataset contains 541,909 rows of transactional information.
 
 8,761 rows left in cancellations
 
+## General Analysis
+### Proportion of items returned
+
+<div style="text-align: center">
+<img src="assets/cancelled_proportion.png" alt="Total Revenue by Month"/>
+</div>
+
+1.63% (8,761) of all the orders were cancelled.
+
 
 ## Analysis of Valid Sales
 ### Total Revenue by Month
@@ -166,29 +175,31 @@ The dataset contains 541,909 rows of transactional information.
 </div>
 
 
-Highest revenue was in November 2011 (£1,457,775.53)
+Highest revenue was in November 2011 (£1,457,297.07)
 
-Lowest revenue was in February 2011 (£508,952.87)
+Lowest revenue was in February 2011 (£508,778.24)
 
-Average revenue was £791,234.22 per month
+Average revenue was £790,974.00 per month
 
 ### Total Revenue by Country (Top 10)
 
 There are 446 items not associated with any country
 
 <div style="text-align: center">
-<img src="assets/top_ten_revenue_fig.png" alt="Top 10 Revenue by Country"/>
+<img src="assets/top_ten_revenue.png" alt="Top 10 Revenue by Country"/>
 </div>
 
-The United Kingdom generated the most revenue (£8,762,173.56) based on this graph. However, this is expected because the company is based in the UK, and they sold the most items in the UK (4,654,402). 
+The United Kingdom generated the most revenue (£8,759,341.53) based on this graph. However, this is expected because the company is based in the UK, and they sold the most items in the UK (4,654,401 items from 17914 invoices). 
 
 ### Top Average Order Values (Top 10)
-Another metric of sales is the average order value (AOV), or average revenue per transaction. This helps identify which country had higher value transactions
+Another metric of sales is the average order value (AOV), or average revenue per invoice. This helps identify which country had higher value transactions
 
-For example, sales in the Netherlands generated £283,889.34 from selling 200,258 items. This indicates the AOV in the Netherlands is much higher than in the UK (£3052.57 vs £489.12)
+AOV = Total Revenue / Number of Invoices
+
+For example, sales in the Netherlands generated £283,794.69 from selling 200,258 items from 93 invoices. This indicates the AOV in the Netherlands is much higher than in the UK (£3051.56 vs £488.97)
 
 <div style="text-align: center">
-<img src="assets/top_ten_aov_fig.png" alt="Top 10 AOV by Country"/>
+<img src="assets/top_ten_aov.png" alt="Top 10 AOV by Country"/>
 </div>
 
 It is clear that the Netherlands either makes more bulk purchases, or purchases more higher-value items per wholesale
